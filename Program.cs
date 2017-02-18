@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleApplication6
+﻿public class A<T>
 {
-    class Program
+    public class B : A<int>
     {
-        static void Main(string[] args)
-        {
-        }
+        public void M() { System.Console.WriteLine(typeof(T)); }
+        public class C : B { }
     }
+}
+public class P
+{
+    public static void Main() { (new A<string>.B.C()).M(); }
 }
